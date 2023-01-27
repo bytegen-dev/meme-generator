@@ -40,6 +40,9 @@ import memesData from "./memesData"
         function resetMeme(){
             // setMemeData({})
             setMemeHeight(false)
+            setMemeData({topText : "",
+            bottomText : "",
+            memeUrl: "logo192.png"})
         }
 
         
