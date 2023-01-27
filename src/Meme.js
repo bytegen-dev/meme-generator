@@ -1,7 +1,7 @@
 import React from "react"
 import memesData from "./memesData"
 
-    export default function Meme() {
+    export default function Meme(props) {
         const[memeHeight, setMemeHeight] = React.useState(false)
 
         const [memeData, setMemeData] = React.useState({
@@ -47,7 +47,7 @@ import memesData from "./memesData"
 
         
         return (
-            <main>
+            <main className="maine">
                 <div className="form">
                     <input 
                         type="text"
@@ -87,6 +87,8 @@ import memesData from "./memesData"
                         <button className="reset-meme" onClick={resetMeme}>Reset</button>
                         <a download = "" href={memeData.memeUrl} rel= "noreferrer" className="download-meme" target="_blank"><i className="fa fa-link"/></a>
                     </div>}
+                </div>
+                <div className="backdrop" onClick={props.onClick}>
                 </div>
             </main>
         )
