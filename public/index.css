@@ -1,0 +1,434 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Karla", sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 255, 51, 0.132), rgb(68, 68, 157));
+    -webkit-tap-highlight-color: rgba(102, 102, 102, 0.488);
+}
+
+.container{
+    border-radius: 30px;
+    box-shadow: 3px 3px 10px #0005;
+    width: 500px;
+    height: 800px;
+    overflow-y: scroll;
+    /* max-height: 1200px; */
+    /* border: 2px solid; */
+    /* overflow: hidden; */
+    overflow-x: hidden;
+    background-color: rgb(220, 228, 220);
+    transition: all 0.5s ease;
+}
+
+@media screen and (max-width:1000px) {
+    .container{
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0px;
+        box-shadow: 0px 0px 0px transparent;
+        /* overflow-y: scroll; */
+    }
+}
+
+main {
+    padding: 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    height: 65px;
+    background: linear-gradient(90deg, #22804b 1.18%, #045828 100%);
+    /* background: green; */
+    color: white;
+    padding: 20px;
+    width: 100%;
+    transition: all 0.5s ease;
+}
+
+.header-link{
+    height: 100%;
+}
+
+.header--image {
+    height: 100%;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.header--title {
+    font-size: 1.25rem;
+    margin-right: auto;
+}
+
+.header--project {
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.form {
+    display: grid;
+    grid-template: 40px 40px / 1fr 1fr;
+    gap: 17px;
+}
+
+.form--input {
+    font-family: "Karla", sans-serif;
+    border-radius: 5px;
+    border: 1px solid #D5D4D8;
+    text-indent: 5px;
+}
+
+.form--button {
+    position: relative;
+    grid-column: 1 / -1;
+    font-family: "Karla", sans-serif;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #22804b 1.18%, #045828 100%);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+}
+
+
+.info{
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    color: #fff;
+    right: 20px;
+    border: 2px solid #fff;
+    transition: all 0.5s ease;
+    /* position: relative; */
+}
+
+.info:hover{
+    opacity: 0.6;
+}
+
+.info::before{
+    box-sizing: border-box;
+    content: "meme image is genereated randomly from a library of over 100 memes";
+    position: fixed;
+    width: 33.33vw;
+    max-width: 1000px;
+    /* height: 100px; */
+    padding: 30px;
+    /* height: 100px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #666;
+    border-radius: 10px;
+    /* padding: 10px; */
+    opacity: 0;
+    bottom: 30px;
+    right: 33.33%;
+    transition: all 0.5s ease;
+    transform: translateY(100px);
+}
+
+.info:hover::before{
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+@media screen and (max-width : 500px) {
+    .form--button::before{
+        /* box-sizing: border-box; */
+        content: "meme image is genereated randomly from a library of over 100 memes";
+        position: fixed;
+        width: 200px;
+        /* width: 33.33vw; */
+        /* max-width: 1000px; */
+        /* height: 100px; */
+        padding: 20px;
+        /* height: 100px; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #666;
+        border-radius: 10px;
+        /* padding: 10px; */
+        opacity: 0;
+        bottom: 30px;
+        /* right: 33.33%; */
+        transition: all 0.5s ease;
+        transform: translateY(100px);
+    }
+
+    .info{
+        display: none;
+    }
+
+    .info::before{
+        display: none;
+    }
+
+    .form--button:hover::before{
+        /* opacity: 1; */
+        animation: info 4s ease forwards;
+    }
+    
+    @keyframes info {
+        0%{
+        }
+        30%{opacity: 0.7; transform: translateY(0);}
+        70%{opacity: 0.7; transform: translateY(0);}
+        100%{}
+    }
+}
+
+
+
+.meme-holder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* border: 2px solid; */
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+
+.meme--image {
+    max-width: 100%;
+}
+
+.meme{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid; */
+    margin: 50px 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    gap: 30px;
+    position: relative;
+}
+
+.topText, .bottomText{
+    color: transparent;
+    font-size: 30px;
+    position: absolute;
+    opacity: 0;
+    z-index: 1;
+    transition: all 0.5s ease;
+    font-weight: bolder;
+    /* -webkit-background-clip: text; */
+    color: #fff;
+    /* background-color: #fff; */
+    text-shadow: 0px 0px 10px #000;
+    /* border: 2px solid #000; */
+    /* box-shadow: 0px 0px 10px #000; */
+    flex-wrap: wrap;
+}
+
+.topText{
+    top: 10px;
+    transform: translateY(-50px);
+}
+
+.bottomText{
+    transform: translateY(50px);
+    bottom: 10px;
+}
+
+.meme.full .topText, .meme.full .bottomText{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* .meme.empty{
+} */
+
+.meme.full{
+    /* height: fit-content; */
+    opacity: 1;
+    /* transition: all 0.5s ease; */
+}
+
+.meme--image{
+    min-width: 200px;
+    overflow: hidden;
+    min-height: 200px;
+    max-width: 80%;
+    /* border: 2px solid green; */
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(87, 137, 87, 0.431);
+    scale: 0;
+    opacity: 0;
+    transition: all 0.5s ease;
+    object-fit: cover;
+    object-position: center;
+    /* padding: 30px; */
+}
+
+.meme.full .meme--image{
+    scale: 1;
+    opacity: 1;
+}
+
+.controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.reset-meme{
+    width: 100px;
+    height: 30px;
+    background-color: rgb(159, 70, 70);
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.download-meme{
+    width: 40px;
+    height: 40px;
+    background-color: green;
+    color: #fff;
+    border-radius: 50%;
+    border: 2px solid;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+
+.meme.full .reset-meme:hover{
+    background-color: #000;
+}
+
+ 
+.meme.empty .download-meme, .meme.empty .reset-meme{
+    opacity: 0;
+    cursor: default;
+}
+
+.download-meme{
+    transform: translateX(100px);
+}
+
+.reset-meme{
+    transform: translateX(-100px);
+}
+
+.meme.full .download-meme, .meme.full .reset-meme{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.meme.full .download-meme:hover{
+    opacity: 0.7 !important;
+}
+
+
+::-webkit-scrollbar{
+    width: 0px;
+    height: 0px;
+}
+
+@media screen and (max-width: 500px) {
+    .form--input{
+        width: 130px;
+    }
+
+    
+}
+
+
+
+.box{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border: 2px solid;
+    border-radius: 5px;
+    margin: 20px;
+    background-color: transparent;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    opacity: 0.4;
+}
+
+
+/* .box:hover{
+    opacity: 1;
+} */
+
+
+
+
+
+
+.form--container{
+    border: 2px solid black;
+    padding: 10px 20px;
+    width: 100%;
+    min-height: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.form--container form{
+    border: 2px solid green;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    max-width: 100%;
+    max-height: 500px;
+}
+
+.form--container input{
+    max-width: 100%;
+
+}
+
+.form--container button{
+    cursor: pointer;
+}
