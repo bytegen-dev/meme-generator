@@ -85,7 +85,7 @@ import memesData from "./memesData"
                     }
                     { <div className="controls">
                         <button className="reset-meme" onClick={resetMeme}>Reset</button>
-                        <a download="meme" href={memeData.memeUrl} rel= "noreferrer" className="download-meme" target="_blank"><i className="fa fa-download"/></a>
+                        <a download = "" href={memeData.memeUrl} rel= "noreferrer" className="download-meme" target="_blank"><i className="fa fa-link"/></a>
                     </div>}
                 </div>
             </main>
