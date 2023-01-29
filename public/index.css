@@ -464,18 +464,23 @@ main {
     background-color: #000;
     color: tomato;
     overflow: hidden;
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
     font-size: 50px;
     top: 0;
     left: 0;
+    transition: all 0.5s ease;
+    opacity: 0;
+    visibility: hidden;
 }
 
 
 @media screen and (max-height: 400px) {
     .orientation{
         display: flex;
+        visibility: visible;
+        opacity: 1;
     }
     
 }
