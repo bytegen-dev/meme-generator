@@ -72,6 +72,7 @@ main {
     overflow: hidden;
     animation: contd 1s ease forwards;
     animation-delay: 2s;
+    display: none;
 }
 
 @keyframes contd {
@@ -344,6 +345,7 @@ main {
     position: relative;
 }
 
+
 .topText, .bottomText{
     color: transparent;
     font-size: 30px;
@@ -401,12 +403,21 @@ main {
     transition: all 0.5s ease;
     object-fit: cover;
     object-position: center;
+    position: relative;
+    overflow: hidden;
     /* padding: 30px; */
 }
+
+
 
 .meme.full .meme--image{
     scale: 1;
     opacity: 1;
+}
+
+.meme--image:hover{
+    /* opacity: 0.8 !important; */
+    filter: grayscale();
 }
 
 .controls{
