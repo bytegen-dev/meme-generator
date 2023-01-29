@@ -2,6 +2,7 @@ import React from "react"
 import Header from "./Header"
 import Meme from "./Meme"
 import Preloader from "./Preloader"
+// import UserMeme from "./UserMeme"
 // import Form from "./tutorial3-form"
 // import Tutorial from "./tutorial"
 // import Tutorial2 from "./tutorial-2"
@@ -29,6 +30,7 @@ export default function App() {
             <Preloader />
             <Header onClick={hamburger}/>
             <Meme onClick={hamburger}/>
+            {/* <UserMeme /> */}
             {/* <Tutorial /> */}
             {/* <Tutorial2 darkMode = {false}/> */}
             {/* <Form /> */}

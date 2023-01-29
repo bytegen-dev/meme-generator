@@ -99,6 +99,9 @@ import React from "react"
                 </div>
                 <div className="backdrop" onClick={props.onClick}>
                 </div>
+                <div className="orientation">
+                    <i class="fa-solid fa-retweet"></i>
+                </div>
             </main>
         )
     }

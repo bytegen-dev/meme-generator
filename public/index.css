@@ -72,7 +72,7 @@ main {
     overflow: hidden;
     animation: contd 1s ease forwards;
     animation-delay: 2s;
-    display: none;
+    /* display: none; */
 }
 
 @keyframes contd {
@@ -391,7 +391,7 @@ main {
     min-width: 200px;
     overflow: hidden;
     min-height: 200px;
-    max-width: 80%;
+    max-width: 300px;
     /* border: 2px solid green; */
     border-radius: 20px;
     display: flex;
@@ -454,6 +454,30 @@ main {
     text-decoration: none;
     transition: all 0.5s ease;
     /* display: none; */
+}
+
+.orientation{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 99;
+    background-color: #000;
+    color: tomato;
+    overflow: hidden;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    top: 0;
+    left: 0;
+}
+
+
+@media screen and (max-height: 400px) {
+    .orientation{
+        display: flex;
+    }
+    
 }
 
 
